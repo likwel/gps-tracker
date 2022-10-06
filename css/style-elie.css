@@ -8,11 +8,13 @@
   border-right-color: #f7639a;
 }
 .form-control {
+  margin-top: 10px;
   padding-top: 10px;
+  padding-left: 20px;
   width: 100%;
   outline-color: #4c9cef;
   border: 2px solid transparent;
-  height: 50px;
+  height: 30px;
   border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px;
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
@@ -35,6 +37,14 @@
   border-width: 2px;
 }
 
+.form-select{
+  height : 50px; 
+  width: 100%;
+
+}
+select option{
+  margin-top: 50px;
+}
 .button {
   border: none;
   height: 40px;
@@ -72,6 +82,7 @@
 .button-style {
   border: 3px solid #4c9cef;
   color: #fff;
+  margin-top: 10px;
 }
 
 .button-style:hover,
@@ -103,8 +114,8 @@
 }
 
 .container{
-  width: 100%;
-  max-width: 940px;
+  width: 100%;/* 
+  max-width: 940px; */
   margin: 0 auto;
   position: relative;
   text-align: center;
@@ -199,4 +210,15 @@
     bottom: 0px;
     background-color: #f7639a;
     animation-delay: 0.3s;
+}
+
+.addDevice{
+  padding: auto;
+  width: 450px;
+  height: 500px;
+  z-index: 999999;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }

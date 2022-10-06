@@ -48,7 +48,7 @@ div.leaflet-control-container div.leaflet-bottom.leaflet-left div {
     left: 0;
 }
 
-#about {
+#Device {
     top: 20%;
     color: #04AA6D;
 }
@@ -98,4 +98,7 @@ div.leaflet-control-container div.leaflet-bottom.leaflet-left div {
     opacity: 1;
     border: 2px solid blue;
     color: black;
+}
+#map > div.leaflet-pane.leaflet-map-pane > div.leaflet-pane.leaflet-popup-pane > div > a{
+    color: blue;
 }

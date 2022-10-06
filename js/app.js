@@ -71,30 +71,14 @@ function getPosition(position) {
     console.log("Your coordinate is: Lat: " + lat + " Long: " + long + " Accuracy: " + accuracy)
 }
 
-function setMarkerDepart(latitude,longitude) {
+function setMarker(latitude,longitude, titre) {
     
     var singleMarker = L.marker([latitude, longitude]);
     singleMarker.addTo(map);
-    let popup = singleMarker.bindPopup('<div style = "margin-bottom:10px;"><strong> Départ  </strong></div> <div><i > Latitude : ' + latitude + ' </i></div><br></div> <div><i > Longitude : ' + longitude + ' </i></div>');
+    let popup = singleMarker.bindPopup('<div style = "margin-bottom:10px;"><strong> '+titre+'</strong></div> <div><i > Latitude : ' + latitude + ' </i></div><br></div> <div><i > Longitude : ' + longitude + ' </i></div>');
     popup.addTo(map);
-   
-}
-
-function setMarkerArrive(latitude,longitude) {
-    
-    var singleMarker = L.marker([latitude, longitude]);
-    singleMarker.addTo(map);
-    let popup = singleMarker.bindPopup('<div style = "margin-bottom:10px;"><strong> Arrivée </strong></div> <div><i > Latitude : ' + latitude + ' </i></div><br></div> <div><i > Longitude : ' + longitude + ' </i></div>');
-    popup.addTo(map);
-   
-}
-
-function setMarkerVehicule(latitude,longitude) {
-    
-    var singleMarker = L.marker([latitude, longitude]);
-    singleMarker.addTo(map);
-    let popup = singleMarker.bindPopup('<div style = "margin-bottom:10px;"><strong> 1586 TBA </strong></div> <div><i > Latitude : ' + latitude + ' </i></div><br></div> <div><i > Longitude : ' + longitude + ' </i></div>');
-    popup.addTo(map);
+    singleMarker.on('mouseover', () => popup.openPopup());
+    singleMarker.on('mouseout', () => popup.closePopup());
    
 }
 
@@ -104,13 +88,19 @@ function getData() {
     fetch('http://localhost:3000/show')
         .then(result => result.json())
         .then(result => {
+            var cmpt =0;
             for (var res of result){
-                arr.push([res.latitude,res.longitude]);
+                if(cmpt>=119){
+                    arr.push([res.latitude,res.longitude]);
+                }
+                cmpt++;
             }
-            setMarkerDepart(arr[0][0],arr[0][1]);
+            console.log(arr);
+            setMarker(arr[0][0],arr[0][1], 'Départ');
+
             traceLine(arr)
-            setMarkerVehicule(arr[1500][0],arr[1500][1])
-            setMarkerArrive(arr[arr.length-1][0],arr[arr.length-1][1]);
+            setMarker(arr[1500][0],arr[1500][1] , '15087 TBL')
+            setMarker(arr[arr.length-1][0],arr[arr.length-1][1] , 'Arrivée');
         });
 }
 
@@ -127,3 +117,12 @@ function traceLine(data) {
 }
 //traceLine();
 getData();
+
+function addNewDevice(){
+    document.querySelector(".addDevice").style.display="inline-block";
+    document.querySelector("#map").style.opacity="0.5";
+}
+function el_close(){
+    document.querySelector(".addDevice").style.display="none";
+    document.querySelector("#map").style.opacity="1";
+}
