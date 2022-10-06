@@ -6,19 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GpsTracker</title>
 
-    <!-- leaflet css  -->
-    <!-- leaflet js  -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+        integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+    <link rel="stylesheet" type="text/css" href="css/style-elie.css">
+
 </head>
 
 <body>
-    <div id="map"></div>
+    <div class="main">
+        <div id="mySidenav" class="sidenav">
+            <a href="#" class ="sidenav-item" id="about">Device <i class="fa fa-fw fa-car icon-float"></i></a>
+            <a href="#" class ="sidenav-item" id="blog">Tracking <i class="fa fa-fw fa-map-marker icon-float"></i></a>
+            <a href="#" class ="sidenav-item" id="projects">Parametre <i class="fa fa-fw fa-cogs icon-float"></i></a>
+            <a href="#" class ="sidenav-item" id="contact">A propos <i class="fa fa-fw fa-info-circle icon-float"></i></a>
+          </div>
+    
+        <div id="map"></div>
+    </div>
+    
+
 </body>
+<script type="text/javascript" src="js/app.js"></script>
+
 </html>
-
-<script type="text/javascript" src="js/app.js'"></script>
-

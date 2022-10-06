@@ -7,3 +7,95 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+a.leaflet-control-zoom-in,
+a.leaflet-control-zoom-out,
+div.leaflet-top.leaflet-right div {
+    background-color: transparent;
+    color: black;
+}
+
+div.leaflet-control-container div.leaflet-bottom.leaflet-left div {
+    background-color: transparent;
+}
+
+/* 
+#navbar{
+    margin-top: auto;
+  margin-bottom: auto;
+    display: inline-block;
+    z-index: 99999;
+    position: absolute;
+} */
+
+#mySidenav a {
+    position: absolute;
+    left: -100px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 120px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 0 5px 5px 0;
+    z-index: 99999;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+}
+
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#about {
+    top: 20%;
+    color: #04AA6D;
+}
+
+#blog {
+    top: 30%;
+    color: #2196F3;
+}
+
+#projects {
+    top: 40%;
+    color: #f44336;
+}
+
+#contact {
+    top: 50%;
+    color: #a212be;
+}
+
+.icon-float {
+    float: right;
+}
+
+#mySidenav {}
+
+/* 
+  .main {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
+@media screen and (max-height: 530px) {
+    #mySidenav {
+        display: none;
+    }
+}
+
+#map>div.leaflet-pane.leaflet-map-pane>div.leaflet-pane.leaflet-popup-pane>div>div.leaflet-popup-tip-container>div {
+    background-color: blue;
+    opacity: 1;
+    border: 2px solid blue;
+}
+
+#map>div.leaflet-pane.leaflet-map-pane>div.leaflet-pane.leaflet-popup-pane>div>div.leaflet-popup-content-wrapper {
+    background-color: transparent;
+    opacity: 1;
+    border: 2px solid blue;
+    color: black;
+}
