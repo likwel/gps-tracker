@@ -10,8 +10,9 @@
 .form-control {
   margin-top: 10px;
   padding-top: 10px;
-  padding-left: 20px;
-  width: 100%;
+  padding-left: 5px;
+  width: 97%;
+  padding: auto;
   outline-color: #4c9cef;
   border: 2px solid transparent;
   height: 30px;
@@ -40,11 +41,15 @@
 .form-select{
   height : 50px; 
   width: 100%;
-
 }
 select option{
   margin-top: 50px;
 }
+
+option{
+  padding: 30px 0;
+}
+
 .button {
   border: none;
   height: 40px;
@@ -226,7 +231,7 @@ select option{
   text-align: center;
 }
 
-.appareil, .parametre{
+.appareil, .parametre , .notif{
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 3px;
@@ -252,7 +257,7 @@ select option{
   color: blue;
   cursor: pointer;
 }
-.appareil-desc, .param-desc{
+.appareil-desc, .param-desc, .notif-desc{
   display: inline-block;
   width: 98%; 
   padding-right: 10px;
@@ -265,7 +270,7 @@ select option{
   margin-right: 10px;
 }
 
-.appareil-list, .param-list{
+.appareil-list, .param-list, .notif-list{
   height: 90%;
   position: relative;
   overflow-y: auto;
@@ -295,4 +300,28 @@ select option{
   display: inline-block;
   font-size: 12px;
   
+}
+
+.notification .badge {
+  font-size: 15px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 8px;
+  border-radius: 50%;
+  background-color:red;
+  color: white;
+}
+.msg-notification{
+  overflow-wrap: break-word;
+}
+.div-msg{
+  margin-top: 20px;
+}
+.titre-notif{
+  display:inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 20ch;
 }

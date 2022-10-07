@@ -119,18 +119,16 @@ function traceLine(data) {
 //traceLine();
 //getData();
 
-function device(){
-    document.querySelector(".appareil").style.display="inline-block";
+function close(className){
+    document.querySelector(className).style.display="inline-block";
     document.querySelector(".sidenav").style.display="none";
-    //document.querySelector("#map").style.opacity="0.5";
-    
 }
-function parametre(){
-    document.querySelector(".parametre").style.display="inline-block";
-    document.querySelector(".sidenav").style.display="none";
-    //document.querySelector("#map").style.opacity="0.5";
-    
-}
+//close appareil
+close(".appareil");
+//close parametre
+close(".parametre");
+//close notification
+close(".notification");
 
 function el_close(){
     document.querySelector(".device").style.display="none";
@@ -149,18 +147,26 @@ function quit_param(){
     document.querySelector(".parametre").style.display="none";
     document.querySelector(".sidenav").style.display="block";
 }
-
-
-var dropdown = document.getElementsByClassName("dropdown-btn");
-
-for (var i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        } else {
-            dropdownContent.style.display = "block";
-        }
-    });
+function quit_notif(){
+    document.querySelector(".notif").style.display="none";
+    document.querySelector(".sidenav").style.display="block";
 }
+
+
+var dropdown = document.getElementsByClassName("icon-down");
+var dropdown2 = document.getElementsByClassName("dropdown-btn");
+function showDropDown(dropdown){
+    for (var i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+}
+showDropDown(dropdown);
+showDropDown(dropdown2);

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style-elie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Notification</title>
+</head>
+
+<body>
+    <!-- Menu notification-->
+
+    <div class="notif" style="">
+        <div style="display: inline-block;width: 100%;padding-bottom: 10px;padding-top: 15px;">
+            <i class="fa fa-fw fa-bell icon-entete fa-lg" style="padding-left: 5px;padding-right: 10px;"></i><span
+                style="font-size: 24px;">Notifications</span>
+            <span onclick="quit_notif()" style="float: right;"><i
+                    class="fa fa-fw fa-times icon-entete fa-lg"></i></span>
+        </div>
+        <hr>
+        <div class="notif-list ">
+            <div class="notif-desc">
+                <i class="fa fa-fw fa-bell-o icon-entete fa-lg "></i>
+                <a href="#" class="dropdown-btn notification ">
+                    <span class="titre-notif"> Le premier élément avec overflow-wrap : break-word calcule le contenu
+                        minimal comme si aucun mot n'était coupé, de sorte que sa largeur devient la largeur du mot le
+                        plus long. L'élément du bas avec overflow-wrap : anywhere calcule le contenu minimal avec toutes
+                        les coupures qu'il peut créer. Vu qu'une coupure peut se produire n'importe où, le contenu
+                        minimal correspond à la largeur d'un seul caractère.
+
+                        N'oubliez pas que ce comportement ne se produit que lorsque min-content est impliqué. Si nous
+                        avions donné une valeur fixe à la largeur, nous verrions le même résultat de coupure de mots
+                        dans les deux cas de figure. </span>
+                    <span class="badge">1</span>
+                </a>
+
+                <div class="dropdown-container div-msg">
+                    <span class="msg-notification">Le premier élément avec overflow-wrap : break-word calcule le contenu
+                        minimal comme si aucun mot n'était coupé, de sorte que sa largeur devient la largeur du mot le
+                        plus long. L'élément du bas avec overflow-wrap : anywhere calcule le contenu minimal avec toutes
+                        les coupures qu'il peut créer. Vu qu'une coupure peut se produire n'importe où, le contenu
+                        minimal correspond à la largeur d'un seul caractère.
+
+                        N'oubliez pas que ce comportement ne se produit que lorsque min-content est impliqué. Si nous
+                        avions donné une valeur fixe à la largeur, nous verrions le même résultat de coupure de mots
+                        dans les deux cas de figure.</span>
+                    <button class="button button-style button-style-color button-style-dark">Fermer</button>
+                </div>
+
+            </div>
+
+            <hr>
+
+
+        </div>
+
+
+    </div>
+
+    <!--Fin menu notification-->
+</body>
+<script type="text/javascript">
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+
+    console.log(dropdown.length)
+
+    for (var i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</html>

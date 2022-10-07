@@ -26,9 +26,10 @@
         <div id="mySidenav" class="sidenav">
             <a href="#" class="sidenav-item" id="Device" onclick="device()">Appareils <i
                     class="fa fa-fw fa-car icon-float"></i></a>
-            <a href="#" class="sidenav-item" id="blog" >Alerte<i
+            <a href="#" class="sidenav-item notification" id="blog" onclick="notification()">Alerte <span class="badge">3</span><i
                     class="fa fa-fw fa-bell icon-float"></i></a>
-            <a href="#" class="sidenav-item" id="projects" onclick="parametre()">Parametre <i class="fa fa-fw fa-cogs icon-float"></i></a>
+            <a href="#" class="sidenav-item" id="projects" onclick="parametre()">Parametre <i
+                    class="fa fa-fw fa-cogs icon-float"></i></a>
             <a href="#" class="sidenav-item" id="contact">A propos <i
                     class="fa fa-fw fa-info-circle icon-float"></i></a>
         </div>
@@ -40,10 +41,10 @@
         <div class="device" style="display: none;">
             <div class="border-2d container">
                 <h2 style="margin-top: 10px;">Ajout d'un nouvel appareil</h2>
-                <form>
-                    <input type="text"  class="form-control" placeholder="Nom de l'appareil">
-                    <input type="text"  class="form-control" placeholder="IMEI">
-                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                <form style="width: 100%;">
+                    <input type="text" class="form-control" placeholder="Nom de l'appareil">
+                    <input type="text" class="form-control" placeholder="IMEI">
+                    <select class="form-group form-control form-select" style="width: 100%;">
                         <option value="" selected="" disabled="">Catégorie</option>
                         <option>Vehicule</option>
                         <option>Moto</option>
@@ -51,14 +52,22 @@
                         <option>Engin</option>
                         <option>Autre</option>
                     </select>
-                    <input type="text"  class="form-control" placeholder="Numéro SIM">
-                    <input type="text"  class="form-control" placeholder="Modèle">
-                    <input type="text"  class="form-control" placeholder="Contact/Chauffeur">
+                    <input type="text" class="form-control" placeholder="Numéro SIM">
+                    <input type="text" class="form-control" placeholder="Modèle">
+                    <select id="subject" class="form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Pilote/Chauffeur</option>
+                        <option>Randria</option>
+                        <option>Rakoto</option>
+                        <option>Franc</option>
+                        <option>Eliza</option>
+                        <option>Autre</option>
+                    </select>
+
                     <div style="display: inline-block;width: 100%;">
                         <button class="button button-style button-style-color button-style-dark" style="width:48%;"
                             onclick="el_close()">Fermer</button>
                         <button class="button button-style button-style-color button-style-dark"
-                            style="width:50%;">Sauvegarder</button>
+                            style="width:50%;">Sauver</button>
                     </div>
 
                 </form>
@@ -111,8 +120,8 @@
 
         <div class="parametre" style="display: none;">
             <div style="display: inline-block;width: 100%;padding-bottom: 10px;padding-top: 15px;">
-                <i class="fa fa-fw fa-cogs icon-entete fa-lg"
-                    style="padding-left: 5px;padding-right: 10px;"></i><span>Paramètres</span>
+                <i class="fa fa-fw fa-cogs icon-entete fa-lg" style="padding-left: 5px;padding-right: 10px;"></i><span
+                    style="font-size: 24px;">Paramètres</span>
                 <span onclick="quit_param()" style="float: right;"><i
                         class="fa fa-fw fa-times icon-entete fa-lg"></i></span>
             </div>
@@ -123,8 +132,8 @@
                     <span class="dropdown-btn">Compte</span>
                     <i class="fa fa-caret-down icon-down"></i>
                     <div class="dropdown-container">
-                        <input type="text"  class="form-control" placeholder="Nom">
-                        <input type="text"  class="form-control" placeholder="E-mail">
+                        <input type="text" class="form-control" placeholder="Nom">
+                        <input type="text" class="form-control" placeholder="E-mail">
                         <input type="password" class="form-control" placeholder="Mot de passe">
                         <button class="button button-style button-style-color button-style-dark">Modifier</button>
                     </div>
@@ -138,14 +147,15 @@
                     <div class="dropdown-container">
                         <select id="subject" class="form-group form-control form-select" style="width: 100%;">
                             <option value="" selected="" disabled="">Nom d'utilisateur</option>
+                            <option>Créer un nouveau</option>
                             <option>Rakoto</option>
                             <option>Rabe</option>
                             <option>Randria</option>
                         </select>
 
                         <input type="text" class="form-control" placeholder="Nom">
-                        <input type="text"  class="form-control" placeholder="E-mail">
-                        <input type="password"  class="form-control" placeholder="Mot de passe">
+                        <input type="text" class="form-control" placeholder="E-mail">
+                        <input type="password" class="form-control" placeholder="Mot de passe">
                         <button class="button button-style button-style-color button-style-dark">Modifier</button>
                         <button class="button button-style button-style-color button-style-dark">Créer</button>
                     </div>
@@ -169,8 +179,8 @@
                             <option>Rabe</option>
                             <option>Randria</option>
                         </select>
-                        <input type="text"  class="form-control" placeholder="Appareil">
-                        <input type="text"  class="form-control" placeholder="Téléphone">
+                        <input type="text" class="form-control" placeholder="Appareil">
+                        <input type="text" class="form-control" placeholder="Téléphone">
                         <button class="button button-style button-style-color button-style-dark">Modifier</button>
                         <button class="button button-style button-style-color button-style-dark">Créer</button>
                     </div>
@@ -190,12 +200,12 @@
                         </select>
                         <select id="subject" class="form-group form-control form-select" style="width: 100%;">
                             <option value="" selected="" disabled="">Appareils</option>
-                            <option>Rakoto</option>
-                            <option>Rabe</option>
-                            <option>Randria</option>
+                            <option>1506 TBL</option>
+                            <option>3045 WWT</option>
+                            <option>6850 TBH</option>
                         </select>
                         <div>
-                            <fieldset style="width: 100%; margin-top: 10px;">
+                            <fieldset style="width: 92%; margin-top: 10px; font-size: 15px;">
                                 <legend>Rôles d'utilisateur</legend>
                                 <div>
                                     <input type="checkbox" id="scales" name="admin" checked>
@@ -209,9 +219,7 @@
                             </fieldset>
                         </div>
 
-                        <input type="text" class="form-control" placeholder="Téléphone">
                         <button class="button button-style button-style-color button-style-dark">Modifier</button>
-                        <button class="button button-style button-style-color button-style-dark">Créer</button>
                     </div>
                     <hr>
                 </div>
@@ -236,6 +244,64 @@
         </div>
 
         <!--Fin menu parametres-->
+
+        <!-- Menu notification-->
+
+        <div class="notif" style="display: none;">
+            <div style="display: inline-block;width: 100%;padding-bottom: 10px;padding-top: 15px;">
+                <i class="fa fa-fw fa-bell icon-entete fa-lg" style="padding-left: 5px;padding-right: 10px;"></i><span
+                    style="font-size: 24px;">Notifications</span>
+                <span onclick="quit_notif()" style="float: right;"><i
+                        class="fa fa-fw fa-times icon-entete fa-lg"></i></span>
+            </div>
+            <hr>
+            <div class="notif-list ">
+                <div class="notif-desc">
+                    <i class="fa fa-fw fa-bell-o icon-entete fa-lg "></i>
+                    <a href="#" class="dropdown-btn notification ">
+                        <span class="titre-notif"> Le premier élément avec overflow-wrap : break-word calcule le contenu
+                            minimal comme si aucun mot n'était coupé, de sorte que sa largeur devient la largeur du mot
+                            le
+                            plus long. L'élément du bas avec overflow-wrap : anywhere calcule le contenu minimal avec
+                            toutes
+                            les coupures qu'il peut créer. Vu qu'une coupure peut se produire n'importe où, le contenu
+                            minimal correspond à la largeur d'un seul caractère.
+
+                            N'oubliez pas que ce comportement ne se produit que lorsque min-content est impliqué. Si
+                            nous
+                            avions donné une valeur fixe à la largeur, nous verrions le même résultat de coupure de mots
+                            dans les deux cas de figure. </span>
+                        <span class="badge">1</span>
+                    </a>
+
+                    <div class="dropdown-container div-msg">
+                        <span class="msg-notification">Le premier élément avec overflow-wrap : break-word calcule le
+                            contenu
+                            minimal comme si aucun mot n'était coupé, de sorte que sa largeur devient la largeur du mot
+                            le
+                            plus long. L'élément du bas avec overflow-wrap : anywhere calcule le contenu minimal avec
+                            toutes
+                            les coupures qu'il peut créer. Vu qu'une coupure peut se produire n'importe où, le contenu
+                            minimal correspond à la largeur d'un seul caractère.
+
+                            N'oubliez pas que ce comportement ne se produit que lorsque min-content est impliqué. Si
+                            nous
+                            avions donné une valeur fixe à la largeur, nous verrions le même résultat de coupure de mots
+                            dans les deux cas de figure.</span>
+                        <button class="button button-style button-style-color button-style-dark">Fermer</button>
+                    </div>
+
+                </div>
+
+                <hr>
+
+
+            </div>
+
+
+        </div>
+
+        <!--Fin menu notification-->
 
         <div id="map"></div>
 
