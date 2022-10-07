@@ -212,13 +212,87 @@ select option{
     animation-delay: 0.3s;
 }
 
-.addDevice{
+.device{
+  top: 20px;
+  right: 40%;
+  left: 30%;
   padding: auto;
-  width: 450px;
+  width: 30%;
   height: 500px;
-  z-index: 999999;
+  z-index: 9999999999;
   position: absolute;
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.appareil, .parametre{
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 3px;
+  background-color: #fff;
+  opacity: 0.6;
+  position: absolute;
+  width: 350px;
+  height: 99%;
+  z-index: 99999;
+  transition: 0.3s;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.entete-appareil{
+  width: 70%;
+  height: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.icon-entete{
+  font-size: 40px;
+  color: blue;
+  cursor: pointer;
+}
+.appareil-desc, .param-desc{
+  display: inline-block;
+  width: 98%; 
+  padding-right: 10px;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.appareil-etat{
+  float: right; 
+  margin-right: 10px;
+}
+
+.appareil-list, .param-list{
+  height: 90%;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dropdown-btn {
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: none;
+  width: 90%;
+}
+.icon-down{
+  float: right;
+  color: blue;
+}
+.param-check{
+  display: inline-block;
+  font-size: 12px;
+  
 }

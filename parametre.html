@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style-elie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Parametre</title>
+</head>
+
+<body>
+    <div class="parametre">
+        <div style="display: inline-block;width: 100%;padding-bottom: 10px;padding-top: 15px;">
+            <i class="fa fa-fw fa-cogs icon-entete fa-lg"
+                style="padding-left: 5px;padding-right: 10px;"></i><span>Paramètres</span>
+            <span onclick="quit_param()" style="float: right;"><i
+                    class="fa fa-fw fa-times icon-entete fa-lg"></i></span>
+        </div>
+        <hr>
+        <div class="param-list">
+            <div class="param-desc">
+                <i class="fa fa-fw fa-user icon-entete fa-lg"></i>
+                <span class="dropdown-btn">Compte</span>
+                <i class="fa fa-caret-down icon-down"></i>
+                <div class="dropdown-container">
+                    <input type="text" id="email" class="form-control" placeholder="Nom">
+                    <input type="text" id="email" class="form-control" placeholder="E-mail">
+                    <input type="password" id="email" class="form-control" placeholder="Mot de passe">
+                    <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                </div>
+                <hr>
+            </div>
+
+            <div class="param-desc">
+                <i class="fa fa-fw fa-users icon-entete fa-lg"></i>
+                <span class="dropdown-btn">Utilisateur</span>
+                <i class="fa fa-caret-down icon-down"></i>
+                <div class="dropdown-container">
+                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Nom d'utilisateur</option>
+                        <option>Rakoto</option>
+                        <option>Rabe</option>
+                        <option>Randria</option>
+                    </select>
+
+                    <input type="text" id="email" class="form-control" placeholder="Nom">
+                    <input type="text" id="email" class="form-control" placeholder="E-mail">
+                    <input type="password" id="email" class="form-control" placeholder="Mot de passe">
+                    <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                    <button class="button button-style button-style-color button-style-dark">Créer</button>
+                </div>
+                <hr>
+            </div>
+
+            <div class="param-desc">
+                <i class="fa fa-fw fa-bell icon-entete fa-lg"></i>
+                <span class="">Notifications</span>
+                <hr>
+            </div>
+
+            <div class="param-desc">
+                <i class="fa fa-fw fa-dribbble icon-entete fa-lg"></i>
+                <span class="dropdown-btn">Pilote/Chauffeur</span>
+                <i class="fa fa-caret-down icon-down"></i>
+                <div class="dropdown-container">
+                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Nom du pilote</option>
+                        <option>Rakoto</option>
+                        <option>Rabe</option>
+                        <option>Randria</option>
+                    </select>
+                    <input type="text" id="email" class="form-control" placeholder="Appareil">
+                    <input type="text" id="email" class="form-control" placeholder="Téléphone">
+                    <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                    <button class="button button-style button-style-color button-style-dark">Créer</button>
+                </div>
+                <hr>
+            </div>
+
+            <div class="param-desc">
+                <i class="fa fa-fw fa-wrench icon-entete fa-lg"></i>
+                <span class="dropdown-btn">Permission</span>
+                <i class="fa fa-caret-down icon-down"></i>
+                <div class="dropdown-container">
+                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Utilisateur</option>
+                        <option>Rakoto</option>
+                        <option>Rabe</option>
+                        <option>Randria</option>
+                    </select>
+                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Appareils</option>
+                        <option>Rakoto</option>
+                        <option>Rabe</option>
+                        <option>Randria</option>
+                    </select>
+                    <div >
+                        <fieldset style="width: 100%; margin-top: 10px;">
+                            <legend >Rôles d'utilisateur</legend>
+                            <div>
+                              <input type="checkbox" id="scales" name="admin" checked>
+                              <label for="admin">Admin</label>
+                            </div>
+                        
+                            <div>
+                              <input type="checkbox" id="horns" name="user">
+                              <label for="user">Utilisateur</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                    <input type="text" id="email" class="form-control" placeholder="Téléphone">
+                    <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                    <button class="button button-style button-style-color button-style-dark">Créer</button>
+                </div>
+                <hr>
+            </div>
+
+            <div class="param-desc">
+                <i class="fa fa-fw fa-globe icon-entete fa-lg"></i>
+                <span class="dropdown-btn">Language</span>
+                <i class="fa fa-caret-down icon-down"></i>
+                <div class="dropdown-container">
+                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Langue</option>
+                        <option>Français</option>
+                        <option>Anglais</option>
+                        <option>Malagasy</option>
+                    </select>
+                    <button class="button button-style button-style-color button-style-dark">Appliquer</button>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+
+    console.log(dropdown.length)
+
+    for (var i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</html>

@@ -1,9 +1,9 @@
 //Initialisation carte map
 
-var map = L.map('map', { zoomControl: false }).setView([14.0860746, 100.608406], 6);
+var map = L.map('map', { zoomControl: false }).setView([-18.8724342 , 47.5177325 ], 6);
 
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     minZoom: 0,
     maxZoom: 20
 });
@@ -25,15 +25,15 @@ var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
 googleSat.addTo(map);
 
 var baseLayers = {
-    "Satellite": googleSat,
     "Google Map": googleStreets,
     "OpenStreetMap": osm,
+    "Satellite": googleSat
 };
 
 L.control.layers(baseLayers).addTo(map);
 
+L.control.scale({ position: 'bottomright',imperial :false }).addTo(map);
 L.control.zoom({ position: 'bottomright' }).addTo(map);
-L.control.scale({ position: 'bottomleft' }).addTo(map);
 
 /*
 if (!navigator.geolocation) {
@@ -41,6 +41,7 @@ if (!navigator.geolocation) {
 } else {
     setInterval(() => {
         navigator.geolocation.getCurrentPosition(getPosition)
+        
     }, 5000);
 }
 */
@@ -116,13 +117,50 @@ function traceLine(data) {
     map.fitBounds(polyline.getBounds());
 }
 //traceLine();
-getData();
+//getData();
 
-function addNewDevice(){
-    document.querySelector(".addDevice").style.display="inline-block";
-    document.querySelector("#map").style.opacity="0.5";
+function device(){
+    document.querySelector(".appareil").style.display="inline-block";
+    document.querySelector(".sidenav").style.display="none";
+    //document.querySelector("#map").style.opacity="0.5";
+    
 }
+function parametre(){
+    document.querySelector(".parametre").style.display="inline-block";
+    document.querySelector(".sidenav").style.display="none";
+    //document.querySelector("#map").style.opacity="0.5";
+    
+}
+
 function el_close(){
-    document.querySelector(".addDevice").style.display="none";
+    document.querySelector(".device").style.display="none";
     document.querySelector("#map").style.opacity="1";
+}
+function create_app(){
+    document.querySelector(".device").style.display="inline-block";
+}
+
+function quit_app(){
+    document.querySelector(".appareil").style.display="none";
+    document.querySelector(".sidenav").style.display="block";
+}
+
+function quit_param(){
+    document.querySelector(".parametre").style.display="none";
+    document.querySelector(".sidenav").style.display="block";
+}
+
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+
+for (var i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
 }

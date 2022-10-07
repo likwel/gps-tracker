@@ -10,42 +10,53 @@
         integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
         integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style-elie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 
 <body>
     <div class="main">
+
+        <!-- Menu sidebar-->
+
         <div id="mySidenav" class="sidenav">
-            <a href="#" class="sidenav-item" id="Device" onclick="addNewDevice()">Device <i class="fa fa-fw fa-car icon-float"></i></a>
-            <a href="#" class="sidenav-item" id="blog">Tracking <i class="fa fa-fw fa-map-marker icon-float"></i></a>
-            <a href="#" class="sidenav-item" id="projects">Parametre <i class="fa fa-fw fa-cogs icon-float"></i></a>
+            <a href="#" class="sidenav-item" id="Device" onclick="device()">Appareils <i
+                    class="fa fa-fw fa-car icon-float"></i></a>
+            <a href="#" class="sidenav-item" id="blog" >Alerte<i
+                    class="fa fa-fw fa-bell icon-float"></i></a>
+            <a href="#" class="sidenav-item" id="projects" onclick="parametre()">Parametre <i class="fa fa-fw fa-cogs icon-float"></i></a>
             <a href="#" class="sidenav-item" id="contact">A propos <i
                     class="fa fa-fw fa-info-circle icon-float"></i></a>
         </div>
 
-        <div class="addDevice" style="display: none;">
+        <!-- Fin menu sidebar-->
+
+        <!-- Menu creation appareils-->
+
+        <div class="device" style="display: none;">
             <div class="border-2d container">
                 <h2 style="margin-top: 10px;">Ajout d'un nouvel appareil</h2>
                 <form>
-                    <input type="text" id="email" class="form-control" placeholder="Nom de device">
-                    <input type="text" id="email" class="form-control" placeholder="Identifiant">
-                    <select id="subject" class=" form-control form-select">
-                        <option value="" selected="" disabled="">Type</option>
+                    <input type="text"  class="form-control" placeholder="Nom de l'appareil">
+                    <input type="text"  class="form-control" placeholder="IMEI">
+                    <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                        <option value="" selected="" disabled="">Catégorie</option>
                         <option>Vehicule</option>
                         <option>Moto</option>
                         <option>Camionnette</option>
                         <option>Engin</option>
                         <option>Autre</option>
                     </select>
-                    <input type="text" id="email" class="form-control" placeholder="Numéro SIM">
-                    <input type="text" id="email" class="form-control" placeholder="Chauffeur">
+                    <input type="text"  class="form-control" placeholder="Numéro SIM">
+                    <input type="text"  class="form-control" placeholder="Modèle">
+                    <input type="text"  class="form-control" placeholder="Contact/Chauffeur">
                     <div style="display: inline-block;width: 100%;">
-                        <button class="button button-style button-style-color button-style-dark"
-                            style="width:48%;" onclick="el_close()">Fermer</button>
+                        <button class="button button-style button-style-color button-style-dark" style="width:48%;"
+                            onclick="el_close()">Fermer</button>
                         <button class="button button-style button-style-color button-style-dark"
                             style="width:50%;">Sauvegarder</button>
                     </div>
@@ -53,6 +64,178 @@
                 </form>
             </div>
         </div>
+
+        <!-- Fin menu creation appareil-->
+
+        <!-- Menu appareils-->
+
+        <div class="appareil" style="display: none;">
+            <div style="display: inline-block;width: 100%;">
+                <i class="fa fa-fw fa-search icon-entete fa-lg" style="padding-left: 5px;"></i><input type="search"
+                    class="entete-appareil form-control" placeholder="Rechercher un appareil">
+                <span onclick="create_app()"><i class="fa fa-fw fa-plus-square icon-entete fa-lg"></i></span>
+                <span onclick="quit_app()"><i class="fa fa-fw fa-times icon-entete fa-lg"></i></span>
+            </div>
+            <hr>
+            <div class="appareil-list">
+                <div class="appareil-desc">
+                    <i class="fa fa-fw fa-map-marker icon-entete fa-lg"></i>
+                    <span>1587 TBA</span>
+                    <div class="appareil-etat">
+                        <span>Play </span>
+                        <span>En ligne</span>
+                    </div>
+
+                    <hr>
+                </div>
+
+                <div class="appareil-desc">
+                    <i class="fa fa-fw fa-map-marker icon-entete fa-lg"></i>
+                    <span>1587 TBA</span>
+                    <div class="appareil-etat">
+                        <span>Play </span>
+                        <span>En ligne</span>
+                    </div>
+
+                    <hr>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- Fin menu appareils-->
+
+        <!-- Menu parametres-->
+
+        <div class="parametre" style="display: none;">
+            <div style="display: inline-block;width: 100%;padding-bottom: 10px;padding-top: 15px;">
+                <i class="fa fa-fw fa-cogs icon-entete fa-lg"
+                    style="padding-left: 5px;padding-right: 10px;"></i><span>Paramètres</span>
+                <span onclick="quit_param()" style="float: right;"><i
+                        class="fa fa-fw fa-times icon-entete fa-lg"></i></span>
+            </div>
+            <hr>
+            <div class="param-list">
+                <div class="param-desc">
+                    <i class="fa fa-fw fa-user icon-entete fa-lg"></i>
+                    <span class="dropdown-btn">Compte</span>
+                    <i class="fa fa-caret-down icon-down"></i>
+                    <div class="dropdown-container">
+                        <input type="text"  class="form-control" placeholder="Nom">
+                        <input type="text"  class="form-control" placeholder="E-mail">
+                        <input type="password" class="form-control" placeholder="Mot de passe">
+                        <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="param-desc">
+                    <i class="fa fa-fw fa-users icon-entete fa-lg"></i>
+                    <span class="dropdown-btn">Utilisateur</span>
+                    <i class="fa fa-caret-down icon-down"></i>
+                    <div class="dropdown-container">
+                        <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                            <option value="" selected="" disabled="">Nom d'utilisateur</option>
+                            <option>Rakoto</option>
+                            <option>Rabe</option>
+                            <option>Randria</option>
+                        </select>
+
+                        <input type="text" class="form-control" placeholder="Nom">
+                        <input type="text"  class="form-control" placeholder="E-mail">
+                        <input type="password"  class="form-control" placeholder="Mot de passe">
+                        <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                        <button class="button button-style button-style-color button-style-dark">Créer</button>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="param-desc">
+                    <i class="fa fa-fw fa-bell icon-entete fa-lg"></i>
+                    <span class="">Notifications</span>
+                    <hr>
+                </div>
+
+                <div class="param-desc">
+                    <i class="fa fa-fw fa-dribbble icon-entete fa-lg"></i>
+                    <span class="dropdown-btn">Pilote/Chauffeur</span>
+                    <i class="fa fa-caret-down icon-down"></i>
+                    <div class="dropdown-container">
+                        <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                            <option value="" selected="" disabled="">Nom du pilote</option>
+                            <option>Rakoto</option>
+                            <option>Rabe</option>
+                            <option>Randria</option>
+                        </select>
+                        <input type="text"  class="form-control" placeholder="Appareil">
+                        <input type="text"  class="form-control" placeholder="Téléphone">
+                        <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                        <button class="button button-style button-style-color button-style-dark">Créer</button>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="param-desc">
+                    <i class="fa fa-fw fa-wrench icon-entete fa-lg"></i>
+                    <span class="dropdown-btn">Permission</span>
+                    <i class="fa fa-caret-down icon-down"></i>
+                    <div class="dropdown-container">
+                        <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                            <option value="" selected="" disabled="">Utilisateur</option>
+                            <option>Rakoto</option>
+                            <option>Rabe</option>
+                            <option>Randria</option>
+                        </select>
+                        <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                            <option value="" selected="" disabled="">Appareils</option>
+                            <option>Rakoto</option>
+                            <option>Rabe</option>
+                            <option>Randria</option>
+                        </select>
+                        <div>
+                            <fieldset style="width: 100%; margin-top: 10px;">
+                                <legend>Rôles d'utilisateur</legend>
+                                <div>
+                                    <input type="checkbox" id="scales" name="admin" checked>
+                                    <label for="admin">Admin</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="horns" name="user">
+                                    <label for="user">Utilisateur</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <input type="text" class="form-control" placeholder="Téléphone">
+                        <button class="button button-style button-style-color button-style-dark">Modifier</button>
+                        <button class="button button-style button-style-color button-style-dark">Créer</button>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="param-desc">
+                    <i class="fa fa-fw fa-globe icon-entete fa-lg"></i>
+                    <span class="dropdown-btn">Language</span>
+                    <i class="fa fa-caret-down icon-down"></i>
+                    <div class="dropdown-container">
+                        <select id="subject" class="form-group form-control form-select" style="width: 100%;">
+                            <option value="" selected="" disabled="">Langue</option>
+                            <option>Français</option>
+                            <option>Anglais</option>
+                            <option>Malagasy</option>
+                        </select>
+                        <button class="button button-style button-style-color button-style-dark">Appliquer</button>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Fin menu parametres-->
 
         <div id="map"></div>
 
